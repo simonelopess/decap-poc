@@ -1,0 +1,55 @@
+backend:
+  name: github
+  repo: simonelopess/decap-poc   # troque pelo seu repositório
+  branch: main
+
+media_folder: "public/admin/uploads"
+public_folder: "/admin/uploads"
+
+collections:
+  - name: "intro"
+    label: "Seção Intro"
+    folder: "src/content/intro"
+    create: false   # normalmente só há 1 arquivo
+    slug: "intro"
+    fields:
+      - { label: "Nome", name: "name", widget: "string" }
+      - { label: "Cargo", name: "role", widget: "string" }
+      - { label: "Descrição", name: "description", widget: "text" }
+      - { label: "Foto", name: "photo", widget: "image" } 
+
+
+  - name: "experiences"
+    label: "Experiências"
+    folder: "src/content/experiences"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Empresa", name: "company", widget: "string" }
+      - { label: "Cargo", name: "role", widget: "string" }
+      - { label: "Período", name: "period", widget: "string" }
+      - { label: "Descrição", name: "description", widget: "text" }
+
+  - name: "projects"
+    label: "Projetos"
+    folder: "src/content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome do Projeto", name: "title", widget: "string" }
+      - { label: "Descrição", name: "description", widget: "text" }
+      - { label: "Link", name: "url", widget: "string" }
+      - { label: "Imagem", name: "image", widget: "image" }
+      - { label: "Tecnologias", name: "techs", widget: "list", field: { label: "Nome", name: "name", widget: "string" } }
+
+
+  - name: "contact"
+    label: "Contato"
+    folder: "src/content/contact"
+    create: false
+    slug: "contact"
+    fields:
+      - { label: "Email", name: "email", widget: "string" }
+      - { label: "Telefone", name: "phone", widget: "string" }
+
+
