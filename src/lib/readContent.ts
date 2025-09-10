@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-export function getProjects(project: string) {
+export function readContent(project: string) {
   const projectsDir = path.join(process.cwd(), `src/content/${project}`);
   const filenames = fs.readdirSync(projectsDir);
 

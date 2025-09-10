@@ -2,9 +2,9 @@
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-import { getProjects } from '../lib/getProjects.js';
+import { readContent } from '../lib/readContent.js';
 
-const projects = getProjects('experiences');
+const projects = readContent('experiences');
 
 ---
 
